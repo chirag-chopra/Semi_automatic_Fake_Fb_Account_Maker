@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
 import random
 import pyperclip
+import getpass
 
 first_name = ["Lashonda","Nickie","Robbi","Young","Mignon","Hellen","Shelley","Earlean","Kathern","Ceola","Tamar","Carolyne","Randy","Filiberto","Antione","Leatrice","Keisha","Josie","Daren","Angel","Rachelle","Newton","Misha","Elba","Tessa","Landon","Alton","Angelena","Marget","Sherly","Kasi","Gregorio","Brendan","Viki","Alphonso","Tanesha","Mable","Sharda","Beau","Mafalda","Yen","Dorcas","Shera","Treasa","Jacques","Celina","Cristi","Harley","Zona","Justin","Hannah","Galina","Avery","Alverta","Laree","Alda","Velia","Mozella","Murray","Florencio","Demetrice","Anjelica","Tameika","Lan","Lynn","Rodrick","Dong","Halina","Aurora","Issac","Diego","Cris","Jaquelyn","Marianna","Marion","Elane","Maud","Mui","Margo","Caleb","Willy","Cruz","Rufus","Shizue","Sherice","Devorah","Phil","Elvin","Leoma","Obdulia","Hien","Isabell","Emerita","Michal","Prince","Blanca","Melodi"]
 
@@ -21,6 +22,8 @@ dt = random.choice(date)
 mt = random.choice(month)
 yr = random.choice(year)
 gd = random.choice(gender)
+usr = getpass.getuser()
+concat = r'C:\Users\\' + usr + r'\Desktop\\fake_fb_account.txt'
 
 driver =  webdriver.Chrome()
 driver.maximize_window()
@@ -41,7 +44,21 @@ obj3.select_by_index(yr)
 driver.find_element(By.ID,gd).click()
 driver.find_element(By.NAME,"websubmit").click()
 driver.execute_script("window.open('https://tempail.com/en')")
-print("\n******************************************************************\n")
-print(pyperclip.paste())
-print(fn+ln+"@123")
-print("\n******************************************************************\n")
+f = open(concat,"a")
+f.write("Username : ")
+f.close()
+f = open(concat,"a")
+f.write(pyperclip.paste())
+f.close()
+f = open(concat,"a")
+f.write("\nPassword : ")
+f.close()
+f = open(concat,"a")
+f.write(fn)
+f.close()
+f = open(concat,"a")
+f.write(ln)
+f.close()
+f = open(concat,"a")
+f.write("@123")
+f.close()
