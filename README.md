@@ -14,3 +14,7 @@ pip install pyperclip
 
 4. getpass
 pip install getpass
+
+#YOU WILL NEED TO INSTALL CHROME OR FIREFOX DRIVER IN ORDER TO RUN THIS SCRIPT ON YOUR FAVOURABLE BROWSER
+
+link :- https://www.seleniumhq.org/download/
