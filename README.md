@@ -1,5 +1,5 @@
 # Semi automatic Fake Fb Account Maker
-## *Create unlimited fake fb accounts using this script*
+#### *(Create unlimited fake fb accounts using this script)*
 
 # Installation :
 
